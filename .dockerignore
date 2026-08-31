@@ -1,0 +1,55 @@
+# Version control check
+.git
+.gitignore
+.gitattributes
+.github
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+doc/
+*.md
+CONTRIBUTING.md
+README.md
+SECURITY.md
+
+# Compiled python files
+*.py[co]
+__pycache__/
+**/__pycache__/
+*.egg-info
+
+# Editor / OS files
+.vscode/
+.idea/
+*~
+*.orig
+.DS_Store
+
+# Odoo runtime data
+odoo/filestore
+/odoo.conf
+*.log
+
+# JS tooling
+node_modules
+jsconfig.json
+tsconfig.json
+package-lock.json
+package.json
+.husky
+
+# Virtualenvs / build artifacts
+/bin/
+/build/
+/dist/
+/include/
+/lib/
+/man/
+/share/
+/src/
+.venv/
+venv/
