@@ -20,6 +20,7 @@ RUN set -eux; \
         fonts-dejavu-core \
         fonts-freefont-ttf \
         fonts-inconsolata \
+        gosu \
         gsfonts \
         libffi-dev \
         libjpeg-dev \
@@ -63,8 +64,8 @@ COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh /odoo/odoo-bin \
     && chown -R odoo:odoo /odoo /etc/odoo/odoo.conf
 
-USER odoo
-
+# Stay root here: the entrypoint fixes up ownership of the (possibly
+# root-owned) /var/lib/odoo volume before dropping privileges to odoo.
 EXPOSE 8069 8072
 
 VOLUME ["/var/lib/odoo"]
